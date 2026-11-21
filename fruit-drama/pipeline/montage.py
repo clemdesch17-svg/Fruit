@@ -46,7 +46,7 @@ def ecrire_ass(chemin, bib, plans, durees):
         styles.append(f"Style: {pid},{POLICE},68,{_ass_couleur(p['couleur'])},&H00FFFFFF,&H00000000,"
                       "&H80000000,-1,0,0,0,100,100,0,0,1,6,2,2,60,60,330,1")
     styles.append(f"Style: ecran,{POLICE},56,&H00FFFFFF,&H00FFFFFF,&H00000000,&HAA000000,-1,0,0,0,"
-                  "100,100,0,0,3,14,0,8,80,80,380,1")
+                  "100,100,0,0,3,14,0,8,80,80,540,1")
     ev, t = [], 0.0
     for plan, d in zip(plans, durees):
         rep = plan.get("replique")
@@ -94,16 +94,26 @@ def assembler(dossier_serie, bib, partie, clips, sortie):
     # 3) sous-titres + carte de fin + musique
     ass = os.path.join(tmp, "sous-titres.ass")
     ecrire_ass(ass, bib, partie["plans"][:len(clips)], durees)
-    debut_carte = max(0.0, total - 2.5)
-    titre = f"PARTIE {partie['partie']}/{partie['total']}"
-    sous = "La suite demain" if partie["partie"] < partie["total"] else "Saison 2 ?"
+    debut_carte = max(0.0, total - 3.0)
+    n, tot = partie["partie"], partie["total"]
+    serie_titre = bib.get("titre", "").upper().replace("'", "’").replace(":", "\\:")
+    if n < tot:
+        fin1, fin2 = "ABONNE-TOI ET LIKE", f"POUR LA PARTIE {n + 1} !"
+    else:
+        fin1, fin2 = "ABONNE-TOI ET LIKE", "POUR LA SAISON 2 !"
     police = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
     vf = (f"ass='{ass}',"
+          # ouverture : « PARTIE N » bien visible en haut pendant 3 s
+          f"drawtext=fontfile={police}:text='{serie_titre}':fontcolor=white:fontsize=50:borderw=6:"
+          f"x=(w-text_w)/2:y=230:enable='lt(t,3)',"
+          f"drawtext=fontfile={police}:text='PARTIE {n}':fontcolor=0xFFD93D:fontsize=110:borderw=9:"
+          f"x=(w-text_w)/2:y=300:enable='lt(t,3)',"
+          # fin : appel à s'abonner pour la partie suivante
           f"drawbox=x=0:y=0:w=iw:h=ih:color=black@0.55:t=fill:enable='gte(t,{debut_carte})',"
-          f"drawtext=fontfile={police}:text='{titre}':fontcolor=0xFFD93D:fontsize=120:borderw=8:"
-          f"x=(w-text_w)/2:y=(h-text_h)/2-60:enable='gte(t,{debut_carte})',"
-          f"drawtext=fontfile={police}:text='{sous}':fontcolor=white:fontsize=60:borderw=6:"
-          f"x=(w-text_w)/2:y=(h-text_h)/2+80:enable='gte(t,{debut_carte})'")
+          f"drawtext=fontfile={police}:text='{fin1}':fontcolor=white:fontsize=80:borderw=7:"
+          f"x=(w-text_w)/2:y=(h-text_h)/2-70:enable='gte(t,{debut_carte})',"
+          f"drawtext=fontfile={police}:text='{fin2}':fontcolor=0xFFD93D:fontsize=84:borderw=8:"
+          f"x=(w-text_w)/2:y=(h-text_h)/2+60:enable='gte(t,{debut_carte})'")
     musique = next(iter(sorted(glob.glob(os.path.join(dossier_serie, "musique.*")))), None)
     cmd = ["ffmpeg", "-y", "-loglevel", "error", "-i", brut]
     if musique:

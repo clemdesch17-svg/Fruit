@@ -69,12 +69,10 @@
 ---
 
 ## Arc des 4 parties (indices plantés tôt)
-- **P1 — L'échographie :** bonheur → à l'écran, le bébé a des pépins de raisin. Mangeo regarde Raisino. *Indices : Citronella blêmit et serre son médaillon ; Raisino et Mangeo se grattent la tige au même moment.* Cliffhanger : Mangeo : « C'est lui le père ?! »
-- **P2 — La baby shower :** Citronella accuse publiquement Fraisine et Raisino. Mangeo part. Premier mensonge révélé : Citronella avait dit qu'elle n'avait jamais connu de raisin — Raisino sort la vieille photo (Citronella + Papy Muscat). Cliffhanger : « Pourquoi ma mère est sur cette photo… avec ton père ? »
-- **P3 — Le test des pépins :** Fraisine exige un test. Résultat : Mangeo EST le père… mais le test révèle aussi qu'il est à moitié raisin. Fraisine remarque la tache violette derrière la tige de Mangeo. Retournement : Raisino et Mangeo sont demi-frères. Cliffhanger : Citronella s'effondre : « Ton père… c'était Muscat. »
-- **P4 — La naissance :** Citronella avoue tout, demande pardon. Mangeo demande pardon à Fraisine et à Raisino. Naissance d'une petite fraise-raisin parfaite, protégée de tous. Résolution partielle : Mangeo veut rencontrer son père… Ouverture saison 2 : Papy Muscat est vivant, et il a une autre famille.
-
----
+- **P1 — L'échographie :** bonheur → à l'écran, le bébé a des pépins violets. *Indices : Citronella serre son médaillon ; Mangeo et Raisino se grattent la tige en miroir ; la photo dépasse de la poche de Raisino.* Cliffhanger : Mangeo : « C'est lui le père ?! »
+- **P2 — La baby shower :** Citronella accuse Fraisine et Raisino et jure n'avoir « jamais vu une vigne de sa vie ». Raisino sort la vieille photo. Cliffhanger : dédicace « Pour Muscat — ton petit citron » → « Maman, c'est qui, Muscat ?! »
+- **P3 — Le test des pépins :** le test prouve que Mangeo est le père… et qu'il est à moitié raisin. Tampon « Domaine Muscat » : Muscat est le père de Raisino → Mangeo et Raisino sont demi-frères. Cliffhanger : « Ton père, c'est Muscat… et je lui ai menti, à lui aussi. »
+- **P4 — La naissance :** Citronella avoue et demande pardon, Fraisine accepte le pardon de Mangeo, naissance d'une petite fraise-raisin protégée de tous, Mangeo se réconcilie avec Raisino. Ouverture saison 2 : Muscat n'a jamais abandonné son fils — il le cherche depuis trente ans.
 
 ## Musique & SFX
 - Bonheur : piano doux + boîte à musique · Révélation : « dun dun dunnn » + silence d'1 s · Tension : battement de cœur + nappe grave · Larmes : piano triste + pluie · Cliffhanger : coupe au noir + coup sourd.

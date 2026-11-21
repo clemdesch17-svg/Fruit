@@ -47,7 +47,14 @@ def _morceaux(repliques, mots, d):
     repérés dans le clip [[mot, début, fin], ...]. On garde le texte exact du script et on
     prend le timing de la voix. Retourne [(début, fin, perso, texte), ...].
     """
-    jetons = [(r["perso"], j) for r in repliques for j in r["texte"].split()]
+    jetons = []
+    for r in repliques:
+        for j in r["texte"].split():
+            # « ! », « ?! », « » »… collés au mot d'avant (espace française avant la ponctuation)
+            if jetons and jetons[-1][0] == r["perso"] and not any(ch.isalnum() for ch in j):
+                jetons[-1] = (r["perso"], jetons[-1][1] + "\u00a0" + j)
+            else:
+                jetons.append((r["perso"], j))
     if not jetons:
         return []
     if mots:

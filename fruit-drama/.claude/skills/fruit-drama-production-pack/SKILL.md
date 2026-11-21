@@ -5,7 +5,7 @@ description: Transformer un script de fruit drama en prompts prêts à coller : 
 
 # Fruit Drama Production Pack
 
-Entrée : bible + script d'une partie (fruit-drama/series/<titre>/). Sortie : tous les prompts techniques. INTERDIT : générer images/voix/vidéos par code (Python, PIL, TTS, moviepy, ffmpeg).
+Entrée : bible + script d'une partie (fruit-drama/series/<titre>/). Sortie : tous les prompts techniques. INTERDIT : dessiner des images ou créer des voix par code (PIL, moviepy pour générer des visuels, gTTS, pyttsx3). AUTORISÉ : l'API Gemini via fruit-drama/pipeline/ (Nano Banana 2.1 + Gemini Omni Flash — Veo 3.1 est arrêté dans l'API Gemini) et l'assemblage ffmpeg.
 
 ## Règle d'or
 Descriptions visuelles des persos et décors copiées MOT POUR MOT dans chaque prompt. Une action principale par plan.
@@ -26,6 +26,7 @@ Reçoit bible + sorties. Vérifie : fiches identiques partout, répliques identi
 Fichier fruit-drama/series/<titre>/prod-partie-N.md, un bloc par plan :
 PLAN N (durée) — Image / Vidéo Veo 3 / Vidéo Kling / Voix
 Puis plan de montage + checklist : fiches → keyframes → vidéos → voix → montage → étiquette « contenu IA ».
+Ajoute aussi le bloc ```yaml « # fruitpipe:partie » lu par le pipeline (format : fruit-drama/pipeline/README.md), et le bloc « # fruitpipe:bible » dans bible.md s'il manque. Ensuite : `python3 fruitpipe.py estimer <titre> N`.
 
 ## « Plan N refait »
 Réécrit seulement ce plan : action simplifiée, cadrage plus serré, une émotion, caméra plus lente. 2 variantes.

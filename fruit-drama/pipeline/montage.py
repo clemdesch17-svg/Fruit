@@ -40,20 +40,59 @@ def _echappe(texte):
     return texte.replace("\\", "\\\\").replace("{", "(").replace("}", ")").replace("\n", "\\N")
 
 
-def ecrire_ass(chemin, bib, plans, durees):
+def _morceaux(texte, mots, d):
+    """Découpe la réplique en morceaux de 2-3 mots, chacun affiché pendant qu'il est prononcé.
+
+    `mots` = mots repérés dans le clip [[mot, début, fin], ...]. On garde le texte du script
+    (orthographe exacte) et on prend le timing de la voix.
+    """
+    jetons = texte.split()
+    if mots:
+        debut, fin = mots[0][1], mots[-1][2]
+    else:                                   # pas de voix repérée : réplique sur tout le plan
+        debut, fin = 0.3, d - 0.3
+    if len(mots) == len(jetons):
+        temps = [(m[1], m[2]) for m in mots]
+    else:                                   # répartition proportionnelle à la longueur des mots
+        poids = [len(j) + 1 for j in jetons]
+        tot, acc, temps = sum(poids), 0, []
+        for p in poids:
+            a = debut + (fin - debut) * acc / tot
+            acc += p
+            temps.append((a, debut + (fin - debut) * acc / tot))
+    groupes, cur = [], []
+    for i, j in enumerate(jetons):
+        cur.append(i)
+        if len(cur) == 3 or j[-1] in ".?!,…" or (len(cur) == 2 and len(j) > 7):
+            groupes.append(cur)
+            cur = []
+    if cur:
+        groupes.append(cur)
+    out = []
+    for k, g in enumerate(groupes):
+        a = temps[g[0]][0]
+        b = temps[groupes[k + 1][0]][0] if k + 1 < len(groupes) else min(d - 0.05, temps[g[-1]][1] + 0.35)
+        out.append((max(0.0, a - 0.05), max(b, a + 0.25), " ".join(jetons[i] for i in g)))
+    return out
+
+
+def ecrire_ass(chemin, bib, plans, durees, mots_par_plan=None):
+    mots_par_plan = mots_par_plan or [None] * len(plans)
     styles = []
     for pid, p in bib["personnages"].items():
-        styles.append(f"Style: {pid},{POLICE},68,{_ass_couleur(p['couleur'])},&H00FFFFFF,&H00000000,"
-                      "&H80000000,-1,0,0,0,100,100,0,0,1,6,2,2,60,60,330,1")
+        # gros texte style TikTok, couleur du personnage, contour noir épais, au tiers bas
+        styles.append(f"Style: {pid},{POLICE},86,{_ass_couleur(p['couleur'])},&H00FFFFFF,&H00000000,"
+                      "&H80000000,-1,0,0,0,100,100,0,0,1,8,3,2,70,70,520,1")
     styles.append(f"Style: ecran,{POLICE},56,&H00FFFFFF,&H00FFFFFF,&H00000000,&HAA000000,-1,0,0,0,"
-                  "100,100,0,0,3,14,0,8,80,80,540,1")
+                  "100,100,0,0,3,14,0,8,80,80,380,1")
     ev, t = [], 0.0
-    for plan, d in zip(plans, durees):
+    for plan, d, mots in zip(plans, durees, mots_par_plan):
         rep = plan.get("replique")
         if rep:
-            nom = bib["personnages"][rep["perso"]]["nom"].upper()
-            ev.append(f"Dialogue: 0,{_t(t + 0.25)},{_t(t + d - 0.1)},{rep['perso']},,0,0,0,,"
-                      f"{{\\fs40}}{_echappe(nom)}\\N{{\\fs68}}{_echappe(rep['texte'])}")
+            for a, b, txt in _morceaux(rep["texte"], mots or [], d):
+                # petit effet « pop » à l'apparition
+                ev.append(f"Dialogue: 0,{_t(t + a)},{_t(t + b)},{rep['perso']},,0,0,0,,"
+                          f"{{\\fscx80\\fscy80\\t(0,90,\\fscx100\\fscy100)}}{_echappe(txt)}")
         if plan.get("texte_ecran"):
             ev.append(f"Dialogue: 0,{_t(t + 0.1)},{_t(t + d - 0.1)},ecran,,0,0,0,,{_echappe(plan['texte_ecran'])}")
         t += d
@@ -98,22 +137,23 @@ def assembler(dossier_serie, bib, partie, clips, sortie):
                     "-c:a", "aac", "-ar", "48000", brut], check=True)
     # 3) sous-titres + carte de fin + musique
     ass = os.path.join(tmp, "sous-titres.ass")
-    ecrire_ass(ass, bib, partie["plans"][:len(clips)], durees)
+    # sous-titres calés sur le moment où chaque mot est prononcé
+    import transcrire
+    mots = transcrire.mots_des_clips(clips, os.path.join(os.path.dirname(clips[0]), "mots.json"))
+    plans = partie["plans"][:len(clips)]
+    mots_par_plan = [mots.get(os.path.basename(c)) if p.get("replique") else None
+                     for p, c in zip(plans, clips)]
+    ecrire_ass(ass, bib, plans, durees, mots_par_plan)
     debut_carte = total
     total += FIN
     n, tot = partie["partie"], partie["total"]
-    serie_titre = bib.get("titre", "").upper().replace("'", "’").replace(":", "\\:")
     if n < tot:
         fin1, fin2 = "ABONNE-TOI ET LIKE", f"POUR LA PARTIE {n + 1} !"
     else:
         fin1, fin2 = "ABONNE-TOI ET LIKE", "POUR LA SAISON 2 !"
     police = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
+    # pas de « Partie N » au début : il est dans la description et la miniature TikTok
     vf = (f"ass='{ass}',"
-          # ouverture : « PARTIE N » bien visible en haut pendant 3 s
-          f"drawtext=fontfile={police}:text='{serie_titre}':fontcolor=white:fontsize=50:borderw=6:"
-          f"x=(w-text_w)/2:y=230:enable='lt(t,3)',"
-          f"drawtext=fontfile={police}:text='PARTIE {n}':fontcolor=0xFFD93D:fontsize=110:borderw=9:"
-          f"x=(w-text_w)/2:y=300:enable='lt(t,3)',"
           # fin : appel à s'abonner pour la partie suivante
           f"drawbox=x=0:y=0:w=iw:h=ih:color=black@0.55:t=fill:enable='gte(t,{debut_carte})',"
           f"drawtext=fontfile={police}:text='{fin1}':fontcolor=white:fontsize=80:borderw=7:"

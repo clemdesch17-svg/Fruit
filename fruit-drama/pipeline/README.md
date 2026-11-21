@@ -21,7 +21,7 @@ Une partie complète (10 plans × 6-8 s) coûte environ 5 $ en 720p ou 2 $ en `-
 ## Installation
 ```bash
 cd fruit-drama/pipeline
-pip install pyyaml            # ffmpeg doit être installé
+pip install pyyaml faster-whisper   # ffmpeg doit être installé
 cp .env.example .env          # puis colle ta clé : GEMINI_API_KEY=...
 ```
 La clé se crée sur aistudio.google.com → Get API key. La génération vidéo demande

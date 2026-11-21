@@ -89,12 +89,18 @@ def assembler(dossier_serie, bib, partie, clips, sortie):
     with open(lst, "w") as f:
         f.writelines(f"file '{os.path.abspath(n)}'\n" for n in norm)
     brut = os.path.join(tmp, "brut.mp4")
+    # la carte « Abonne-toi » vient APRÈS le dernier plan (image figée 3 s) pour ne pas
+    # recouvrir le cliffhanger
+    FIN = 3.0
     subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", lst,
-                    "-c", "copy", brut], check=True)
+                    "-vf", f"tpad=stop_mode=clone:stop_duration={FIN}", "-af", f"apad=pad_dur={FIN}",
+                    "-c:v", "libx264", "-preset", "medium", "-crf", "18", "-pix_fmt", "yuv420p",
+                    "-c:a", "aac", "-ar", "48000", brut], check=True)
     # 3) sous-titres + carte de fin + musique
     ass = os.path.join(tmp, "sous-titres.ass")
     ecrire_ass(ass, bib, partie["plans"][:len(clips)], durees)
-    debut_carte = max(0.0, total - 3.0)
+    debut_carte = total
+    total += FIN
     n, tot = partie["partie"], partie["total"]
     serie_titre = bib.get("titre", "").upper().replace("'", "’").replace(":", "\\:")
     if n < tot:

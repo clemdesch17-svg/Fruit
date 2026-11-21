@@ -40,28 +40,34 @@ def _echappe(texte):
     return texte.replace("\\", "\\\\").replace("{", "(").replace("}", ")").replace("\n", "\\N")
 
 
-def _morceaux(texte, mots, d):
-    """Découpe la réplique en morceaux de 2-3 mots, chacun affiché pendant qu'il est prononcé.
+def _morceaux(repliques, mots, d):
+    """Découpe les répliques en morceaux de 2-3 mots, chacun affiché pendant qu'il est prononcé.
 
-    `mots` = mots repérés dans le clip [[mot, début, fin], ...]. On garde le texte du script
-    (orthographe exacte) et on prend le timing de la voix.
+    `repliques` = [{perso, texte}, ...] dans l'ordre où elles sont dites ; `mots` = mots
+    repérés dans le clip [[mot, début, fin], ...]. On garde le texte exact du script et on
+    prend le timing de la voix. Retourne [(début, fin, perso, texte), ...].
     """
-    jetons = texte.split()
+    jetons = [(r["perso"], j) for r in repliques for j in r["texte"].split()]
+    if not jetons:
+        return []
     if mots:
         debut, fin = mots[0][1], mots[-1][2]
-    else:                                   # pas de voix repérée : réplique sur tout le plan
+    else:                                   # pas de voix repérée : répliques sur tout le plan
         debut, fin = 0.3, d - 0.3
     if len(mots) == len(jetons):
         temps = [(m[1], m[2]) for m in mots]
     else:                                   # répartition proportionnelle à la longueur des mots
-        poids = [len(j) + 1 for j in jetons]
+        poids = [len(j) + 1 for _, j in jetons]
         tot, acc, temps = sum(poids), 0, []
         for p in poids:
             a = debut + (fin - debut) * acc / tot
             acc += p
             temps.append((a, debut + (fin - debut) * acc / tot))
     groupes, cur = [], []
-    for i, j in enumerate(jetons):
+    for i, (perso, j) in enumerate(jetons):
+        if cur and jetons[cur[0]][0] != perso:      # un morceau ne mélange jamais deux personnages
+            groupes.append(cur)
+            cur = []
         cur.append(i)
         if len(cur) == 3 or j[-1] in ".?!,…" or (len(cur) == 2 and len(j) > 7):
             groupes.append(cur)
@@ -72,7 +78,8 @@ def _morceaux(texte, mots, d):
     for k, g in enumerate(groupes):
         a = temps[g[0]][0]
         b = temps[groupes[k + 1][0]][0] if k + 1 < len(groupes) else min(d - 0.05, temps[g[-1]][1] + 0.35)
-        out.append((max(0.0, a - 0.05), max(b, a + 0.25), " ".join(jetons[i] for i in g)))
+        out.append((max(0.0, a - 0.05), max(b, a + 0.25), jetons[g[0]][0],
+                    " ".join(jetons[i][1] for i in g)))
     return out
 
 
@@ -87,11 +94,9 @@ def ecrire_ass(chemin, bib, plans, durees, mots_par_plan=None):
                   "100,100,0,0,3,14,0,8,80,80,380,1")
     ev, t = [], 0.0
     for plan, d, mots in zip(plans, durees, mots_par_plan):
-        rep = plan.get("replique")
-        if rep:
-            for a, b, txt in _morceaux(rep["texte"], mots or [], d):
+        for a, b, perso, txt in _morceaux(plan.get("repliques", []), mots or [], d):
                 # petit effet « pop » à l'apparition
-                ev.append(f"Dialogue: 0,{_t(t + a)},{_t(t + b)},{rep['perso']},,0,0,0,,"
+                ev.append(f"Dialogue: 0,{_t(t + a)},{_t(t + b)},{perso},,0,0,0,,"
                           f"{{\\fscx80\\fscy80\\t(0,90,\\fscx100\\fscy100)}}{_echappe(txt)}")
         if plan.get("texte_ecran"):
             ev.append(f"Dialogue: 0,{_t(t + 0.1)},{_t(t + d - 0.1)},ecran,,0,0,0,,{_echappe(plan['texte_ecran'])}")
@@ -109,11 +114,29 @@ def ecrire_ass(chemin, bib, plans, durees, mots_par_plan=None):
 def assembler(dossier_serie, bib, partie, clips, sortie):
     tmp = os.path.join(os.path.dirname(sortie), "_montage")
     os.makedirs(tmp, exist_ok=True)
+    # 0) repérer les mots prononcés (sous-titres + coupe des silences)
+    import transcrire
+    mots = transcrire.mots_des_clips(clips, os.path.join(os.path.dirname(clips[0]), "mots.json"))
+    plans = partie["plans"][:len(clips)]
+    fenetres, mots_par_plan = [], []
+    for k, (p, c) in enumerate(zip(plans, clips)):
+        m = mots.get(os.path.basename(c)) if p.get("repliques") else None
+        d0 = duree(c)
+        if m:   # on coupe les longs silences avant le 1er mot et après le dernier
+            # le plan 1 garde son début (image d'accroche) ; ailleurs 0,5 s d'air avant la voix
+            a = 0.0 if k == 0 else max(0.0, m[0][1] - 0.5)
+            b = min(d0, max(m[-1][2] + 0.6, a + 3.0))
+            m = [[w, s0 - a, s1 - a] for w, s0, s1 in m]
+        else:   # plan muet : on le garde entier
+            a, b = 0.0, d0
+        fenetres.append((a, b))
+        mots_par_plan.append(m)
     # 1) normaliser chaque clip (1080x1920, 30 i/s, audio stéréo 48 kHz, silence si absent)
     norm, durees = [], []
     for i, c in enumerate(clips):
         o = os.path.join(tmp, f"n{i:02d}.mp4")
-        cmd = ["ffmpeg", "-y", "-loglevel", "error", "-i", c]
+        a, b = fenetres[i]
+        cmd = ["ffmpeg", "-y", "-loglevel", "error", "-i", c, "-ss", f"{a:.3f}", "-to", f"{b:.3f}"]
         if not a_audio(c):
             cmd += ["-f", "lavfi", "-i", "anullsrc=r=48000:cl=stereo", "-shortest"]
         cmd += ["-vf", "scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,fps=30,setsar=1",
@@ -138,11 +161,6 @@ def assembler(dossier_serie, bib, partie, clips, sortie):
     # 3) sous-titres + carte de fin + musique
     ass = os.path.join(tmp, "sous-titres.ass")
     # sous-titres calés sur le moment où chaque mot est prononcé
-    import transcrire
-    mots = transcrire.mots_des_clips(clips, os.path.join(os.path.dirname(clips[0]), "mots.json"))
-    plans = partie["plans"][:len(clips)]
-    mots_par_plan = [mots.get(os.path.basename(c)) if p.get("replique") else None
-                     for p, c in zip(plans, clips)]
     ecrire_ass(ass, bib, plans, durees, mots_par_plan)
     debut_carte = total
     total += FIN

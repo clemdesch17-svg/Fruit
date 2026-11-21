@@ -55,9 +55,11 @@ def partie(titre, n, bib):
         for pid in plan["persos"]:
             if pid not in bib["personnages"]:
                 raise SystemExit(f"Plan {plan['n']} : perso « {pid} » absent de la bible")
-        rep = plan.get("replique")
-        if rep and rep["perso"] not in bib["personnages"]:
-            raise SystemExit(f"Plan {plan['n']} : réplique d'un perso inconnu « {rep['perso']} »")
+        # une réplique (`replique`) ou plusieurs enchaînées (`repliques`)
+        plan["repliques"] = plan.get("repliques") or ([plan["replique"]] if plan.get("replique") else [])
+        for rep in plan["repliques"]:
+            if rep["perso"] not in bib["personnages"]:
+                raise SystemExit(f"Plan {plan['n']} : réplique d'un perso inconnu « {rep['perso']} »")
     p.setdefault("total", 4)
     return p
 

@@ -1,7 +1,7 @@
 # Le Pépin du Siècle — Partie 3 : à coller dans Google Flow
 
 **Réglages :** Vidéo · Ingrédients · 9:16 · Omni 1.2 Flash · 720p · **8 s** · ×1
-**Images :** A = Fraisine + Mangeo · B = Raisino + Mamie Citronella · MP4 uniquement. Coût ≈ 240 crédits (10 plans).
+**Images :** A = Fraisine + Mangeo · B = Raisino + Mamie Citronella · MP4 uniquement. Coût ≈ 192 crédits (8 plans).
 
 Bloc de jeu commun (déjà inclus) : *exaggerated over-the-top cartoon acting, big expressive body movements and gestures, fast-paced, the dialogue starts immediately with no pause.*
 
@@ -42,17 +42,7 @@ Pixar-style 3D animation, cinematic lighting, glossy realistic fruit skin with t
 Pixar-style 3D animation, cinematic lighting, glossy realistic fruit skin with tiny water droplets, vertical 9:16. All characters keep their fruit heads for the entire shot; they never turn into humans, no morphing. Use the grape man and the mango man from the reference images: Raisino (purple grape head, mustard hoodie) and Mangeo (mango head, navy shirt). Setting: a modern kitchen at night. Very funny over-the-top scene: Raisino jumps on Mangeo and hugs him tightly, overjoyed, and says in French with a warm husky voice, laughing: "J'suis pas le père, frérot… j'suis le TONTON, wesh !" Mangeo stays frozen with his arms dangling, totally lost, and immediately says in French, deadpan: "Lâche-moi, putain, je bug complet là !" Fast-paced, no pause. No subtitles, no on-screen text, no music.
 ```
 
-## PLAN 8 — A + B
-```
-Pixar-style 3D animation, cinematic lighting, glossy realistic fruit skin with tiny water droplets, vertical 9:16. All characters keep their fruit heads for the entire shot; they never turn into humans, no morphing. Use the three characters from the reference images: Fraisine the pregnant strawberry woman (cream cardigan), Mangeo the mango man (navy shirt) and Raisino the grape man (wet mustard yellow hoodie). Setting: a modern kitchen at night, rain on the window. Exaggerated comedic acting, big gestures, fast-paced, dialogue starts immediately. Fraisine pulls apart Mangeo and Raisino who are hugging, grabs her car keys and says in French, bossy: "Bon, les frérots, les câlins c'est plus tard. On va chez ta mère. MAINTENANT." Mangeo panics, hands on his head, and immediately answers in French with a deep young male voice: "Wesh, à une heure du mat' ?! Elle va nous tuer, wallah !" No subtitles, no on-screen text, no music.
-```
-
-## PLAN 9 — B
-```
-Pixar-style 3D animation, cinematic lighting, glossy realistic fruit skin with tiny water droplets, vertical 9:16. All characters keep their fruit heads for the entire shot; they never turn into humans, no morphing. Use the old lemon woman from the reference image: Mamie Citronella (yellow lemon head, white bun, round gold glasses, lilac tweed jacket, gold locket). Setting: an old-fashioned elegant living room at night, yellow floral wallpaper, velvet armchair, framed family photos, fireplace glow. Alone in her armchair, she opens her gold locket, revealing a tiny photo of a grape man, a tear rolls behind her glasses, and she whispers in French with a trembling high-pitched elderly voice: "Pardonne-moi, Muscat… Trente ans de silence. Et ce soir, ils vont tout savoir." Suddenly loud banging on the front door, she jumps in fright and snaps the locket shut. Slow push-in, tense drone. No subtitles, no on-screen text, no music.
-```
-
-## PLAN 10 — A + B — cliffhanger
+## PLAN 8 — A + B — cliffhanger
 ```
 Pixar-style 3D animation, cinematic lighting, glossy realistic fruit skin with tiny water droplets, vertical 9:16. All characters keep their fruit heads for the entire shot; they never turn into humans, no morphing. Use the mango man and the old lemon woman from the reference images: Mangeo (mango head, navy shirt) and Mamie Citronella (yellow lemon head, white bun, gold glasses, lilac tweed jacket, gold locket). Setting: an old-fashioned elegant living room at night, yellow floral wallpaper, velvet armchair, framed family photos, fireplace glow. Mangeo bursts through the door and says in French with a deep male voice, furious: "Maman. La vérité. Tout de suite, merde !" Mamie Citronella, sitting in the armchair, clutches her locket, tears running behind her glasses, and immediately answers in French with a trembling elderly voice: "Ton père, c'est Muscat… et je lui ai menti, à lui aussi." Slow push-in on her face, heavy thud at the end. No subtitles, no on-screen text, no music.
 ```

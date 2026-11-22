@@ -160,7 +160,8 @@ def assembler(dossier_serie, bib, partie, clips, sortie, couper=True, fin=4.0):
     brut = os.path.join(tmp, "brut.mp4")
     # la carte « Abonne-toi » vient APRÈS le dernier plan (image figée 3 s) pour ne pas
     # recouvrir le cliffhanger
-    FIN = fin
+    # durée cible : entre 1:00 et 1:02 (TikTok paie au-delà d'1 min) → la carte de fin s'allonge si besoin
+    FIN = max(fin, min(8.0, 61.5 - total))
     subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", lst,
                     "-vf", f"tpad=stop_mode=clone:stop_duration={FIN}", "-af", f"apad=pad_dur={FIN}",
                     "-c:v", "libx264", "-preset", "medium", "-crf", "18", "-pix_fmt", "yuv420p",

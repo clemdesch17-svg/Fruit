@@ -1,7 +1,7 @@
 # Partie 3/4 — Le test des pépins
 
 ## Méta
-- **Durée :** ~55-60 s après montage (8 plans de 8 s)
+- **Durée :** ~68-72 s après montage (10 plans de 8 s) — plus d'une minute (rémunérable)
 - **Résumé :** En pleine nuit, Fraisine impose le test. Raisino débarque trempé. Résultat : Mangeo est bien le père… mais « 50 % raisin ». Le tampon « Domaine Muscat » révèle que Mangeo et Raisino sont frères. Mamie Citronella craque.
 - **Texte de miniature :** C'EST MOI LE PÈRE… 50 % RAISIN ?!
 - **Phrase culte :** Raisino : « J'suis pas le père, frérot… j'suis le TONTON, wesh ! »
@@ -20,7 +20,9 @@
 | 5 | cuisine_nuit | Mangeo, Fraisine | Mangeo s'arrête net, relit, panique ; Fraisine pointe derrière sa tige (la tache violette). | Mangeo : « Attends… "50 % raisin" ?! C'est quoi ce bordel ?! » → Fraisine : « Et c'est quoi, ça, derrière ta tige, hein ?! » |
 | 6 | cuisine_nuit | Raisino, Mangeo | Raisino retourne la photo (tampon « Domaine Muscat ») ; les deux se grattent la tige en même temps. | Raisino : « Domaine Muscat… Wallah frérot, Muscat c'est mon daron. » → Mangeo : « Donc toi et moi… on est FRÈRES ?! Sa mère ! » |
 | 7 | cuisine_nuit | Raisino, Mangeo | ★ Raisino saute au cou de Mangeo, Mangeo figé, les bras ballants. | Raisino : « J'suis pas le père, frérot… j'suis le TONTON, wesh ! » → Mangeo : « Lâche-moi, putain, je bug complet là ! » |
-| 8 | salon_citronella | Mangeo, Citronella | Cliffhanger. Mangeo débarque chez sa mère en pleine nuit ; elle serre son médaillon, en larmes. Coupe au noir. | Mangeo : « Maman. La vérité. Tout de suite, merde ! » → Citronella : « Ton père, c'est Muscat… et je lui ai menti, à lui aussi. » |
+| 8 | cuisine_nuit | Fraisine, Mangeo, Raisino | Fraisine sépare les deux frères qui se câlinent, attrape ses clés ; Mangeo panique. | Fraisine : « Bon, les frérots, les câlins c'est plus tard. On va chez ta mère. MAINTENANT. » → Mangeo : « Wesh, à une heure du mat' ?! Elle va nous tuer, wallah ! » |
+| 9 | salon_citronella | Citronella | Seule dans son fauteuil, elle ouvre son médaillon (photo de Muscat), larme ; on tambourine à la porte, elle sursaute. | Citronella : « Pardonne-moi, Muscat… Trente ans de silence. Et ce soir, ils vont tout savoir. » |
+| 10 | salon_citronella | Mangeo, Citronella | Cliffhanger. Mangeo débarque chez sa mère en pleine nuit ; elle serre son médaillon, en larmes. Coupe au noir. | Mangeo : « Maman. La vérité. Tout de suite, merde ! » → Citronella : « Ton père, c'est Muscat… et je lui ai menti, à lui aussi. » |
 
 Garde-fous : langage de jeunes partagé entre plusieurs personnages (pas de caricature d'un seul) ; aucune insulte visant un groupe ; pas de violence (le torchon est comique) ; pas de contenu sexuel (le test se fait avec un tube de salive).
 

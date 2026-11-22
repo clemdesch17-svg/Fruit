@@ -118,7 +118,7 @@ def ecrire_ass(chemin, bib, plans, durees, mots_par_plan=None):
                 + "\n".join(ev) + "\n")
 
 
-def assembler(dossier_serie, bib, partie, clips, sortie):
+def assembler(dossier_serie, bib, partie, clips, sortie, couper=True, fin=4.0):
     tmp = os.path.join(os.path.dirname(sortie), "_montage")
     os.makedirs(tmp, exist_ok=True)
     # 0) repérer les mots prononcés (sous-titres + coupe des silences)
@@ -131,8 +131,8 @@ def assembler(dossier_serie, bib, partie, clips, sortie):
         d0 = duree(c)
         if m:   # on coupe les longs silences avant le 1er mot et après le dernier
             # le plan 1 garde son début (image d'accroche) ; ailleurs 0,5 s d'air avant la voix
-            a = 0.0 if k == 0 else max(0.0, m[0][1] - 0.5)
-            b = min(d0, max(m[-1][2] + 0.6, a + 3.0))
+            a = 0.0 if (k == 0 or not couper) else max(0.0, m[0][1] - 0.6)
+            b = d0 if not couper else min(d0, max(m[-1][2] + 0.8, a + 3.0))
             m = [[w, s0 - a, s1 - a] for w, s0, s1 in m]
         else:   # plan muet : on le garde entier
             a, b = 0.0, d0
@@ -160,7 +160,7 @@ def assembler(dossier_serie, bib, partie, clips, sortie):
     brut = os.path.join(tmp, "brut.mp4")
     # la carte « Abonne-toi » vient APRÈS le dernier plan (image figée 3 s) pour ne pas
     # recouvrir le cliffhanger
-    FIN = 3.0
+    FIN = fin
     subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", lst,
                     "-vf", f"tpad=stop_mode=clone:stop_duration={FIN}", "-af", f"apad=pad_dur={FIN}",
                     "-c:v", "libx264", "-preset", "medium", "-crf", "18", "-pix_fmt", "yuv420p",

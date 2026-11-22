@@ -213,10 +213,14 @@ def cmd_montage(args):
         raise SystemExit("Aucun clip à assembler.")
     part = dict(part, plans=plans_ok)
     sortie = os.path.join(rendus(args.titre), f"{args.titre}_partie{args.n}.mp4")
-    total, musique = montage.assembler(serie.dossier(args.titre), bib, part, clips, sortie)
+    total, musique = montage.assembler(serie.dossier(args.titre), bib, part, clips, sortie,
+                                       couper=not args.sans_coupe, fin=args.fin)
     print(f"→ {os.path.relpath(sortie)}  ({total:.1f} s, musique : {'oui' if musique else 'non — ajoute series/<titre>/musique.mp3'})")
-    if not 55 <= total <= 70:
-        print(f"ATTENTION : durée {total:.1f} s hors de la cible 55-70 s.")
+    if total < 61:
+        print(f"ATTENTION : {total:.1f} s — TikTok ne rémunère que les vidéos de PLUS d'une minute "
+              "(ajoute un plan, --fin 6 ou --sans-coupe).")
+    elif total > 90:
+        print(f"ATTENTION : {total:.1f} s — un peu long, vise 65-75 s.")
 
 
 def bilan(titre):
@@ -248,6 +252,8 @@ def main():
     p.add_argument("plan", type=int); p.add_argument("--image", action="store_true", help="refaire aussi le keyframe")
     qualite(p)
     p = sp.add_parser("montage"); p.add_argument("titre"); p.add_argument("n", type=int)
+    p.add_argument("--sans-coupe", action="store_true", help="ne pas couper les silences des clips")
+    p.add_argument("--fin", type=float, default=4.0, help="durée de la carte « Abonne-toi » (s)")
 
     args = ap.parse_args()
     {"estimer": cmd_estimer, "fiches": cmd_fiches, "valider": cmd_valider, "partie": cmd_partie,

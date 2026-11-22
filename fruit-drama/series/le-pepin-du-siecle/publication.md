@@ -87,3 +87,29 @@ Vertical 9:16 TikTok cover, Pixar-style 3D animation, explosive colorful comic s
 
 ## Rythme conseillé
 Une partie par jour à la même heure (par ex. 19 h), ou tous les 2 jours. Ne poste la Partie 1 que lorsque la Partie 2 est déjà prête, pour ne jamais faire attendre ceux qui veulent la suite.
+
+---
+
+# YouTube Shorts (même vidéo, à republier)
+YouTube accepte les Shorts jusqu'à 3 min : tes parties de 61-75 s passent sans rien changer.
+Publie sur YouTube **quelques heures après TikTok** (même fichier MP4, sans filigrane TikTok).
+Coche **« Contenu modifié ou synthétique : Oui »** (Détails → Contenu altéré).
+Ajoute chaque partie à une **playlist « Le Pépin du Siècle »**.
+
+| Partie | Titre YouTube (100 caractères max) |
+|---|---|
+| 1 | Son bébé a des pépins… VIOLETS 😳🍓 Le Pépin du Siècle (Partie 1/4) #shorts |
+| 2 | Mamie a menti sur la photo 📸🍋 Le Pépin du Siècle (Partie 2/4) #shorts |
+| 3 | C'EST MOI LE PÈRE… 50 % raisin ?! 🍇 Le Pépin du Siècle (Partie 3/4) #shorts |
+| 4 | Le pépin du siècle est né 🥹 Le Pépin du Siècle (Partie 4/4 FINALE) #shorts |
+
+**Description YouTube (même modèle pour chaque partie, change le numéro) :**
+```
+🍓 LE PÉPIN DU SIÈCLE — Partie N/4
+Une série IA de fruits qui pleurent, mentent et se trahissent.
+👉 Abonne-toi pour la Partie N+1 !
+Playlist complète : (colle le lien de la playlist)
+#shorts #fruitdrama #histoire #feuilleton #ia
+Contenu généré par IA.
+```
+Commentaire à épingler : le même que sur TikTok.

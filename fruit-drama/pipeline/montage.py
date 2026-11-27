@@ -131,8 +131,10 @@ def assembler(dossier_serie, bib, partie, clips, sortie, couper=True, fin=4.0):
         d0 = duree(c)
         if m:   # on coupe les longs silences avant le 1er mot et après le dernier
             # le plan 1 garde son début (image d'accroche) ; ailleurs 0,5 s d'air avant la voix
-            a = 0.0 if (k == 0 or not couper) else max(0.0, m[0][1] - 0.6)
-            b = d0 if not couper else min(d0, max(m[-1][2] + 0.8, a + 3.0))
+            # coupe serrée « série » : on entre juste avant la 1re parole et on sort juste après la
+            # dernière → pas de pose de fin (tête baissée, personnages figés), ça enchaîne
+            a = 0.0 if (k == 0 or not couper) else max(0.0, m[0][1] - 0.3)
+            b = d0 if not couper else min(d0, max(m[-1][2] + 0.25, a + 2.5))
             m = [[w, s0 - a, s1 - a] for w, s0, s1 in m]
         else:   # plan muet : on le garde entier
             a, b = 0.0, d0

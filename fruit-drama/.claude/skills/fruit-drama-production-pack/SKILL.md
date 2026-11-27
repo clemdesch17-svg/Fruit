@@ -8,6 +8,7 @@ description: Transformer un script de fruit drama en prompts prêts à coller : 
 Entrée : bible + script d'une partie (fruit-drama/series/<titre>/). Sortie : tous les prompts techniques. INTERDIT : dessiner des images ou créer des voix par code (PIL, moviepy pour générer des visuels, gTTS, pyttsx3). AUTORISÉ : l'API Gemini via fruit-drama/pipeline/ (Nano Banana 2.1 + Gemini Omni Flash — Veo 3.1 est arrêté dans l'API Gemini) et l'assemblage ffmpeg.
 
 ## Règle d'or
+ENCHAÎNE / COUPE : mêmes personnages qui continuent la même conversation → le clip suivant part de la dernière image du précédent (continuité, pas de pose de fin). Nouveau personnage, moment important ou changement de scène → COUPE : nouvelle image de référence et nouveau cadrage.
 Descriptions visuelles des persos et décors copiées MOT POUR MOT dans chaque prompt. Une action principale par plan.
 
 ## Étape 0 : fiches de référence

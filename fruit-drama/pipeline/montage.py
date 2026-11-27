@@ -146,7 +146,7 @@ def assembler(dossier_serie, bib, partie, clips, sortie, couper=True, fin=4.0):
         cmd = ["ffmpeg", "-y", "-loglevel", "error", "-i", c, "-ss", f"{a:.3f}", "-to", f"{b:.3f}"]
         if not a_audio(c):
             cmd += ["-f", "lavfi", "-i", "anullsrc=r=48000:cl=stereo", "-shortest"]
-        cmd += ["-vf", "scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,fps=30,setsar=1",
+        cmd += ["-vf", "scale=1080:1920:force_original_aspect_ratio=increase:flags=lanczos,crop=1080:1920,fps=30,setsar=1",
                 "-c:v", "libx264", "-preset", "medium", "-crf", "18", "-pix_fmt", "yuv420p",
                 "-c:a", "aac", "-ar", "48000", "-ac", "2", o]
         subprocess.run(cmd, check=True)

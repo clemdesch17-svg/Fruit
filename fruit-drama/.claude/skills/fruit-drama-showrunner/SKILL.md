@@ -32,3 +32,8 @@ Bible + 4 parties, chacune avec miniature (6 mots max), légende + question, 5 h
 
 ## Commandes
 « Partie N », « Saison 2 », « Idées xN », « Version courte ».
+
+## Skills associés (à appliquer)
+- `fruit-drama-cinematographie` : ligne CAMERA variée, ENCHAÎNE/COUPE, rythme.
+- `fruit-drama-jeu-et-voix` : caractères, signatures vocales, dialogues remplis, émotion juste, réactions.
+- `fruit-drama-decors-ambiance` : décors fixes, figurants qui réagissent, lumière, sons d'ambiance.

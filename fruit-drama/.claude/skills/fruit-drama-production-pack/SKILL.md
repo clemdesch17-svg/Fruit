@@ -31,3 +31,8 @@ Ajoute aussi le bloc ```yaml « # fruitpipe:partie » lu par le pipeline (format
 
 ## « Plan N refait »
 Réécrit seulement ce plan : action simplifiée, cadrage plus serré, une émotion, caméra plus lente. 2 variantes.
+
+## Skills associés (à appliquer)
+- `fruit-drama-cinematographie` : ligne CAMERA variée, ENCHAÎNE/COUPE, rythme.
+- `fruit-drama-jeu-et-voix` : caractères, signatures vocales, dialogues remplis, émotion juste, réactions.
+- `fruit-drama-decors-ambiance` : décors fixes, figurants qui réagissent, lumière, sons d'ambiance.

@@ -52,6 +52,18 @@
 - **I1** Golda + Kiwo · **I2** Mamie Prune + Clémentine · **I3** Docteur Pastèque + Ananas Jo · **I4** Bananito (seul)
 - Les autres paires (Golda + Pastèque, Kiwo + Clémentine…) sont fabriquées en recadrant ces images.
 
+
+## Caractères et façons de parler (à respecter dans CHAQUE réplique)
+| Perso | Caractère | Façon de parler | Corps / jeu |
+|---|---|---|---|
+| Golda | calme, méfiante, douce, mélancolique, sourit peu | phrases courtes, voix basse, mystérieuse, jamais de gros mots | posture droite, mains jointes, regards en coin |
+| Kiwo | charmeur, drôle, insouciant, cœur sur la main | langage de jeunes (« wesh », « frère », « grave »), blagues, rit beaucoup | bouge tout le temps, gestes amples, s'appuie partout |
+| Mamie Prune | cash, maligne, tendre en secret | expressions de mamie (« ma belle », « mon petit »), petites piques drôles | lente, s'appuie sur sa canne, baisse ses lunettes pour fixer |
+| Clémentine | pipelette, curieuse, loyale, impulsive | parle vite, exagère tout, « j'hallucine », « t'abuses » | sautille, mains devant la bouche, très expressive |
+| Docteur Pastèque | froid, calculateur, poli et inquiétant | vouvoie, phrases lentes et précises, jamais de cri | immobile, ajuste ses lunettes, sourire en coin |
+| Ananas Jo | gros bras pas très malin, gentil au fond | phrases simples, lentes, voix très grave, répète « patron » | bras croisés, lunettes de soleil, bouge peu |
+| Bananito | influenceur hyperactif | parle à sa caméra (« Salut la team ! »), crie, enthousiaste | filme tout avec son selfie stick, grimaces |
+
 ## Décors fixes (EN)
 - **rayon_nuit :** a supermarket fruit aisle at night, lights dimmed, cool blue moonlight through high windows, neon price signs glowing, wooden fruit crates and shelves.
 - **rayon_jour :** a bright busy supermarket fruit aisle during the day, colorful fruit displays, warm light, price tags.

@@ -61,7 +61,7 @@
 ## Arc (compte à rebours 7 jours, indices plantés tôt)
 - **P1 — Jours 1-2 :** Kiwo arrive au rayon, coup de foudre pour la mystérieuse Golda. Mamie Prune la regarde avec un drôle d'air (indice). Première tache brune sur Kiwo : « plus que 7 jours ». Bananito tombe sur une photo de 1906 avec la même pomme. Cliffhanger : il lance un live « Cette pomme a 120 ans !!! »… et le Docteur Pastèque le regarde.
 - **P2 — Jours 3-4 :** histoire d'amour, gags avec Clémentine et Bananito ; Golda avoue son secret à Kiwo (le pépin d'or) ; Pastèque et Ananas Jo débarquent. Cliffhanger : les taches de Kiwo s'étendent et Golda comprend que son pépin peut le sauver.
-- **P3 — Jours 5-6 :** Pastèque enlève Golda (filet, sans violence) ; mission sauvetage drôle (Clémentine, Bananito, Mamie Prune) ; Kiwo s'affaiblit. Twist : Mamie Prune était immortelle avant et a donné son pépin à Golda il y a 60 ans. Cliffhanger : Golda doit choisir.
+- **P3 — Jours 5-6 :** Pastèque enlève Golda (filet, sans violence) ; mission sauvetage drôle (Clémentine, Bananito, Mamie Prune) ; Kiwo s'affaiblit. Twist : Mamie Prune était immortelle avant et avait le pépin d'or il y a 120 ans et l'a donné à Golda. Cliffhanger : Golda doit choisir.
 - **P4 — Jour 7 (finale) :** Ananas Jo se retourne contre Pastèque ; Golda donne son pépin à Kiwo, il est sauvé, elle devient mortelle (une petite ride, heureuse : « Je veux vieillir avec toi »). Pastèque est enfermé dans le congélateur (comique). Ouverture saison 2 : dans le labo, une deuxième lueur dorée s'allume… « Il en reste un. »
 
 ## Règles de production (leçons)

@@ -24,7 +24,7 @@
 - **Voix :** jeune homme, enjoué, rapide, blagueur.
 
 ### 3. Mamie Prune — la gardienne du secret
-- Pruneau très ridé · drôle, cash, tendre · secret (twist P3) : il y a 60 ans, c'est ELLE qui était immortelle ; elle a donné son pépin d'or à Golda et a vieilli.
+- Pruneau très ridé · drôle, cash, tendre · secret (twist P3) : il y a 120 ans, le pépin d'or était à ELLE ; elle l'a donné à Golda et a vieilli.
 - **Visuel :** Mamie Prune is an anthropomorphic old prune woman: her whole head and body are a very wrinkled dark purple-brown dried plum, small twinkling black eyes behind thick round glasses, a big mischievous smile, a tiny grey bun of hair, human-like arms and legs, wearing a knitted mustard cardigan, a long plaid skirt and fluffy pink slippers, leaning on a wooden cane.
 - **Voix :** vieille dame, rocailleuse, drôle, un peu gouailleuse.
 

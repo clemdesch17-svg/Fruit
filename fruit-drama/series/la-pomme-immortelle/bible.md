@@ -53,6 +53,15 @@
 - Les autres paires (Golda + Pastèque, Kiwo + Clémentine…) sont fabriquées en recadrant ces images.
 
 
+## Voix (une signature très différente par personnage, à copier telle quelle dans les prompts)
+- Golda : low velvety young female voice, slow and calm, almost whispering, melancholic
+- Kiwo : bright high-energy young male voice, slightly nasal, fast and laughing
+- Mamie Prune : very old crackly raspy female voice, slow, funny southern French grandma accent
+- Clémentine : high-pitched squeaky teenage girl voice, very fast, breathless
+- Docteur Pastèque : very deep smooth cold mature male voice, slow, precise, polite and menacing
+- Ananas Jo : extremely deep booming slow male voice, gentle and a bit dumb
+- Bananito : loud hoarse young male influencer voice, shouting to his camera, super fast
+
 ## Caractères et façons de parler (à respecter dans CHAQUE réplique)
 | Perso | Caractère | Façon de parler | Corps / jeu |
 |---|---|---|---|

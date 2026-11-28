@@ -17,3 +17,4 @@ Format : [date] | ce qui a mal tourné | règle pour l'éviter
 - [2026-11-27] | Enchaînements pas naturels | ENCHAÎNE quand les mêmes persos continuent la conversation (départ = dernière image du clip précédent) ; COUPE seulement pour un nouveau perso, un moment important ou un changement de scène
 - [2026-11-27] | Image C (4 persos côte à côte, très large) → Grok rapetisse les personnages | Toujours une image de référence VERTICALE 9:16 avec seulement les 2 persos du plan (A, B, D, E, F…)
 - [2026-11-28] | Grok invente des répliques en plus et surjoue sur un plan de tension | Ajouter « Only this line of dialogue, no other words » ; plan final calme et dramatique ; le dernier plan garde sa fin (réaction) au montage
+- [2026-11-28] | Plans avec 2 petites répliques puis mouvements dans le vide = pas fluide | Chaque clip de 6 s REMPLI de dialogue : 3-5 répliques courtes en ping-pong, 13-18 mots, « they talk from the first second to the last »

@@ -22,15 +22,15 @@ Golda enfermée dans le labo, Kiwo qui fane, et Mamie Prune qui cachait le plus 
 
 | n° | image de référence | enchaînement | dialogue |
 |---|---|---|---|
-| 1 | Golda + Ananas Jo | COUPE | **JOUR 5 / 7** · Golda : « Lâchez-moi ! Au secours ! » → Ananas Jo : « Pardon madame… c'est le travail. » |
-| 2 | Kiwo + Clémentine | COUPE | Kiwo : « Ils ont pris Golda ! » → Clémentine : « Ok. Mission sauvetage. Maintenant. » |
-| 3 | I2 | COUPE | Mamie Prune : « Le labo ? Derrière le congélo. On y va. » → Clémentine : « Mamie… en chaussons ? » |
-| 4 | Clémentine + Bananito | COUPE | Bananito : « Mission secrète, la team ! » → Clémentine : « Éteins ce téléphone, ou je t'épluche ! » |
-| 5 | Golda + Docteur Pastèque | COUPE | Docteur Pastèque : « Donne-moi ton pépin, et tu sors. » → Golda : « Jamais. Pas à vous. » |
-| 6 | Kiwo + Mamie Prune | COUPE | **JOUR 6 / 7** · Kiwo : « Plus qu'un jour, Mamie… j'vois déjà flou. » → Mamie Prune : « Tiens bon. » |
-| 7 | dernière image du plan 6 | ENCHAÎNE | **TWIST** · Mamie Prune : « Il y a cent vingt ans, ce pépin était à moi. » |
-| 8 | dernière image du plan 7 | ENCHAÎNE | **PHRASE CULTE** · Kiwo : « Tu regrettes ? » → Mamie Prune : « Jamais. Vieillir, c'est le plus beau cadeau. » |
-| 9 | Golda + Docteur Pastèque | COUPE | Docteur Pastèque : « Ton kiwi s'abîme. Il lui reste un jour. » → Golda : « Kiwo… » |
-| 10 | dernière image du plan 9 | ENCHAÎNE | **CLIFFHANGER** · Docteur Pastèque : « Le pépin pour moi… ou pour lui. Choisis. » |
+| 1 | Golda + Ananas Jo | COUPE | **JOUR 5 / 7** · Golda : « Lâchez-moi ! Au secours ! » → Ananas Jo : « Pardon madame… c'est le travail. » → Golda : « Vous êtes sérieux ?! » → Ananas Jo : « Le patron est pas gentil. » |
+| 2 | Kiwo + Clémentine | COUPE | Kiwo : « Ils ont pris Golda ! » → Clémentine : « Qui ça ? » → Kiwo : « L'ananas à lunettes ! » → Clémentine : « Ok. Mission sauvetage. Maintenant. » |
+| 3 | I2 | COUPE | Mamie Prune : « Le labo ? Derrière le congélo. On y va. » → Clémentine : « Mamie… en chaussons ? » → Mamie Prune : « J'ai fait pire, ma puce. » |
+| 4 | Clémentine + Bananito | COUPE | Bananito : « Mission secrète, la team ! » → Clémentine : « Chut ! » → Bananito : « On chuchote, la team… » → Clémentine : « Éteins ce téléphone, ou je t'épluche ! » |
+| 5 | Golda + Docteur Pastèque | COUPE | Docteur Pastèque : « Donne-moi ton pépin, et tu sors. » → Golda : « Jamais. Pas à vous. » → Docteur Pastèque : « Tout le monde a un prix. » |
+| 6 | Kiwo + Mamie Prune | COUPE | **JOUR 6 / 7** · Kiwo : « Plus qu'un jour, Mamie… j'vois déjà flou. » → Mamie Prune : « Tiens bon, gamin. » → Kiwo : « Pour elle… » → Mamie Prune : « Écoute-moi bien. » |
+| 7 | dernière image du plan 6 | ENCHAÎNE | **TWIST** · Mamie Prune : « Il y a cent vingt ans, ce pépin était à moi. » → Kiwo : « Quoi ?! » → Mamie Prune : « Je lui ai donné. » |
+| 8 | dernière image du plan 7 | ENCHAÎNE | **PHRASE CULTE** · Kiwo : « Tu regrettes ? » → Mamie Prune : « Jamais. Vieillir, c'est le plus beau cadeau. » → Kiwo : « Même avec les rides ? » → Mamie Prune : « Surtout avec les rides. » |
+| 9 | Golda + Docteur Pastèque | COUPE | Docteur Pastèque : « Ton kiwi s'abîme. Il lui reste un jour. » → Golda : « Kiwo… » → Docteur Pastèque : « Tic tac, ma dorée. » |
+| 10 | dernière image du plan 9 | ENCHAÎNE | **CLIFFHANGER** · Docteur Pastèque : « Le pépin pour moi… ou pour lui. » → Golda : « Vous êtes un monstre. » → Docteur Pastèque : « Choisis. Maintenant. » |
 
 Bloc technique : `prod-partie-3.md` · Prompts : `grok-partie-3.md`.

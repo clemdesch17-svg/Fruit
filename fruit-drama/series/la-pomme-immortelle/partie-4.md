@@ -22,15 +22,15 @@ Jour 7. Un pépin d'or, deux cœurs, un seul choix. Et ce qui brille au fond du 
 
 | n° | image de référence | enchaînement | dialogue |
 |---|---|---|---|
-| 1 | I3 | COUPE | **JOUR 7 / 7** · Ananas Jo : « Dernier jour du kiwi. J'arrête, patron. » → Docteur Pastèque : « Remets tes lunettes, Jo. » |
-| 2 | Clémentine + Ananas Jo | COUPE | Clémentine : « Jo ?! T'es avec nous ? » → Ananas Jo : « Ouais. On libère la pomme. » |
-| 3 | I1 | COUPE | Golda : « Kiwo, je suis là. » → Kiwo : « Même flou, t'es belle. » |
-| 4 | dernière image du plan 3 | ENCHAÎNE | Golda : « Prends mon pépin d'or. » → Kiwo : « Non… Tu deviendrais mortelle. » |
-| 5 | dernière image du plan 4 | ENCHAÎNE | **PHRASE CULTE** · Golda : « Je veux vieillir avec toi. » → Kiwo : « …T'es sûre ? » |
-| 6 | dernière image du plan 5 | ENCHAÎNE | Kiwo : « Mes taches… parties ! Et le pépin s'est éteint. » |
-| 7 | I2 | COUPE | Clémentine : « Je pleure pas, c'est le jus ! » → Mamie Prune : « Bienvenue chez les mortels. » |
-| 8 | I3 | COUPE | Docteur Pastèque : « Jo ! Sors-moi de ce cageot ! » → Ananas Jo : « Vous vouliez rester frais, patron. » |
-| 9 | I4 | COUPE | Bananito : « Jour sept, minuit passé… Kiwo est toujours là ! » |
-| 10 | I3 | COUPE | **CLIFFHANGER SAISON 2** · Ananas Jo : « Patron… y a un truc qui brille. » → Docteur Pastèque : « Il en reste un. » |
+| 1 | I3 | COUPE | **JOUR 7 / 7** · Ananas Jo : « Dernier jour du kiwi. J'arrête, patron. » → Docteur Pastèque : « Remets tes lunettes, Jo. » → Ananas Jo : « Non. Je vois clair, maintenant. » |
+| 2 | Clémentine + Ananas Jo | COUPE | Clémentine : « Jo ?! T'es avec nous ? » → Ananas Jo : « Ouais. On libère la pomme. » → Clémentine : « Mamie, Bananito, venez ! C'est ouvert ! » |
+| 3 | I1 | COUPE | Golda : « Kiwo, je suis là. » → Kiwo : « T'es venue… » → Golda : « Regarde-moi. Reste avec moi. » → Kiwo : « Même flou, t'es belle. » |
+| 4 | dernière image du plan 3 | ENCHAÎNE | Golda : « Prends mon pépin d'or. » → Kiwo : « Non… Tu deviendrais mortelle. » → Golda : « Je sais. » → Kiwo : « Golda, je veux pas ça… » |
+| 5 | dernière image du plan 4 | ENCHAÎNE | **PHRASE CULTE** · Golda : « Je veux vieillir avec toi. » → Kiwo : « …T'es sûre ? » → Golda : « Jamais été aussi sûre. » → Kiwo : « Alors… on vieillit ensemble. » |
+| 6 | dernière image du plan 5 | ENCHAÎNE | Kiwo : « Mes taches… parties ! » → Golda : « Regarde ! Ça marche ! » → Kiwo : « Et le pépin s'est éteint. » → Golda : « Et moi, ma première ride. » |
+| 7 | I2 | COUPE | Clémentine : « Je pleure pas, c'est le jus ! » → Mamie Prune : « Bienvenue chez les mortels. » → Clémentine : « Ils sont trop beaux… » |
+| 8 | I3 | COUPE | Docteur Pastèque : « Jo ! Sors-moi de ce cageot ! » → Ananas Jo : « Vous vouliez rester frais, patron. » → Docteur Pastèque : « C'est pas drôle ! » → Ananas Jo : « Un peu, si. » |
+| 9 | I4 | COUPE | Bananito : « Jour sept, minuit passé… » → Bananito : « Kiwo est toujours là ! » → Bananito : « La team… j'ai pleuré. » → Bananito : « Meilleur live ever. » |
+| 10 | I3 | COUPE | **CLIFFHANGER SAISON 2** · Ananas Jo : « Patron… y a un truc qui brille. » → Docteur Pastèque : « Où ça ? » → Ananas Jo : « Là, dans le bocal. » → Docteur Pastèque : « Il en reste un. » |
 
 Bloc technique : `prod-partie-4.md` · Prompts : `grok-partie-4.md`.
